@@ -1,0 +1,123 @@
+.products-page-container {
+  padding: 120px 3%;
+  /* padding: 40px 3% 60px; */
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.page-header h1 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #052e16;
+  text-transform: capitalize;
+  margin: 0 0 8px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 16px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+}
+
+.product-img-box {
+  height: 220px;
+  padding: 18px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.product-details {
+  padding: 18px;
+}
+
+.product-details h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #111827;
+}
+
+.product-details .price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 14px;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  background: #15803d;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background: #166534;
+}
+
+.no-products {
+  padding: 80px 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 20px;
+  color: #6b7280;
+}
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .products-page-container {
+    padding: 24px 4% 40px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

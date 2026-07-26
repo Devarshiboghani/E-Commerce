@@ -1,0 +1,68 @@
+.filter-sort-wrapper {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin: 40px 0;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.filter-box,
+.sort-box {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.filter-box label,
+.sort-box label {
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.filter-box select,
+.sort-box select {
+  min-width: 220px;
+
+  padding: 12px 15px;
+
+  border-radius: 12px;
+
+  border: 1px solid #d1d5db;
+
+  outline: none;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.filter-box select:focus,
+.sort-box select:focus {
+  border-color: #15803d;
+}
+
+@media (max-width: 768px) {
+  .filter-sort-wrapper {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .filter-box select,
+  .sort-box select {
+    width: 100%;
+  }
+}

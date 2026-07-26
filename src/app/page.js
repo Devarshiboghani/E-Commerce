@@ -1,0 +1,24 @@
+"use client";
+
+import Hero from "@/Components/Hero/Hero";
+import Features from "@/Components/Features/Features";
+import Categories from "@/Components/Categories/Categories";
+import Products from "@/Components/Products/Products";
+import Testimonials from "@/Components/Testimonials/Testimonials";
+import Footer from "@/Components/Footer/Footer";
+
+const Home = () => {
+ 
+  return (
+    <>
+      <Hero />
+      <Features />
+      <Categories />
+      <Products />
+      <Testimonials />
+      <Footer />
+    </>
+  );
+};
+
+export default Home;

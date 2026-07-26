@@ -1,0 +1,113 @@
+.signin-page{
+    background:#f6faf7;
+    min-height:100vh;
+}
+
+.left-content{
+    max-width: 500px;
+}
+
+.signin-left h1{
+    font-size:58px;
+    line-height: 1.1;
+    font-weight:800;
+    color:#14532d;
+}
+
+.signin-left p{
+    margin-top:20px;
+    font-size:22px;
+    color:#4b5563;
+     line-height:1.8;
+}
+
+.signin-left span{
+    color:#15803d;
+    font-weight:700;
+}
+
+.signin-left img{
+    margin-top:40px;
+    max-width:520px;
+}
+
+.login-image{
+    width: 320px;
+    height: 320px;
+    display:block;
+    margin:40px auto 0;
+}
+
+.signin-card{
+    border:none;
+    border-radius:28px;
+    padding:50px;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08),
+        0 5px 15px rgba(22,101,52,.08);
+}
+
+.signin-card h2{
+    font-weight:700;
+    color:#14532d;
+}
+
+.input-box{
+    display:flex;
+    align-items:center;
+    border:1px solid #d1d5db;
+    height:58px;
+    border-radius:16px;
+    padding:0 15px;
+    background:white;
+}
+
+.input-box:focus-within{
+    border-color:#15803d;
+    box-shadow:0 0 0 4px rgba(21,128,61,.12);
+}
+
+.input-box svg{
+    color:#15803d;
+    font-size:20px;
+}
+
+.input-box input{
+    border:none !important;
+    box-shadow:none !important;
+    height:52px;
+}
+
+.login-btn{
+    background:#15803d !important;
+    border:none !important;
+    height:52px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:18px;
+}
+
+.login-btn:hover{
+    background:#166534 !important;
+}
+
+@media(max-width:991px){
+
+.signin-page{
+padding:60px 0;
+}
+
+.signin-card{
+padding:30px;
+}
+
+}
+
+@media(max-width:576px){
+
+.signin-card{
+padding:22px;
+border-radius:18px;
+}
+
+}
