@@ -80,8 +80,8 @@ RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 
 # Admin Credentials (Hardcoded for testing)
-ADMIN_EMAIL="admin@zestcart.com"
-ADMIN_PASSWORD="adminpassword123
+ADMIN_EMAIL=admin@admin.com
+ADMIN_PASSWORD=admin
 ```
 
 ### 5. Run the Development Server
