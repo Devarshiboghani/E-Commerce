@@ -1,0 +1,152 @@
+.cart-card {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.cart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.cart-card-image {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+  margin-right: 1.5rem;
+}
+
+.cart-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-card-details {
+  flex-grow: 1;
+}
+
+.cart-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 0.25rem 0;
+}
+
+.cart-card-category {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin: 0 0 0.5rem 0;
+  text-transform: capitalize;
+}
+
+.cart-card-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.cart-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.25rem;
+}
+
+.qty-btn {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #495057;
+  transition: all 0.2s ease;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background: #e9ecef;
+  color: #212529;
+}
+
+.qty-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qty-display {
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.cart-card-total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  min-width: 100px;
+  text-align: right;
+}
+
+.remove-btn {
+  background: #fee2e2;
+  color: #ef4444;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #fecaca;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .cart-card {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 5rem;
+  }
+  
+  .cart-card-actions {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .remove-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}

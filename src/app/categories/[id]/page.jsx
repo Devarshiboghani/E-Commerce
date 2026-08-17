@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllProducts } from "@/redux/actions/productAction";
 import { getCategories } from "@/redux/actions/categoryAction";
 import "./category-products.css";
+import ProductCard from "@/Components/ProductCard/ProductCard";
 
 export default function CategoryProductsPage() {
   const { id } = useParams();
@@ -59,19 +60,7 @@ export default function CategoryProductsPage() {
       ) : (
         <div className="products-grid">
           {filteredProducts.map((product) => (
-            <div className="product-card" key={product._id}>
-              <div className="product-img-box">
-                <img
-                  src={product.images?.[0] || product.image || product.productImage}
-                  alt={product.title || product.productName || product.name}
-                />
-              </div>
-              <div className="product-details">
-                <h4>{product.title || product.productName || product.name}</h4>
-                <p className="price">₹{product.price}</p>
-                <button className="add-to-cart-btn">Add To Cart</button>
-              </div>
-            </div>
+            <ProductCard key={product._id} item={product} />
           ))}
         </div>
       )}

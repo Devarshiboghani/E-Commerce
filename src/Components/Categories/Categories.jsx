@@ -63,9 +63,10 @@ const Categories = () => {
               onClick={() => handleCategoryClick(item._id)} // Click Handler Added
             >
               <img
-                src={item.categoryImage}
+                src={item.categoryImage || "https://placehold.co/400x400/f8f9fa/a0aec0?text=No+Image"}
                 alt={item.categoryName}
                 className="category-image"
+                onError={(e) => { e.target.src = "https://placehold.co/400x400/f8f9fa/a0aec0?text=No+Image"; }}
               />
               <h5>{item.categoryName}</h5>
             </div>

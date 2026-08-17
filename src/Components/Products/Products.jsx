@@ -12,6 +12,7 @@ import {
   removeWishlist,
   getWishlist,
 } from "@/redux/actions/wishlistAction";
+import { addToCart } from "@/redux/actions/cartAction";
 import "./Products.css";
 
 const Products = () => {
@@ -159,7 +160,17 @@ const Products = () => {
                   className="cart-btn"
                   onClick={(e) => {
                     e.stopPropagation();
-                    alert("Add To Cart");
+                    if (!user) {
+                      router.push("/signin");
+                      return;
+                    }
+                    dispatch(addToCart({ userId: user._id, productId: item._id, quantity: 1 })).then((res) => {
+                      if (!res.error) {
+                        alert("Added to cart successfully! 🛒");
+                      } else {
+                        alert("Failed to add to cart: " + res.payload);
+                      }
+                    });
                   }}
                 >
                   Add to Cart

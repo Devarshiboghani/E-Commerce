@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import { MdOutlineDashboardCustomize } from "react-icons/md"; // Ek professional dashboard icon
 import { getWishlist } from "@/redux/actions/wishlistAction";
+import { getCart } from "@/redux/actions/cartAction";
 import "./Header.css";
 
 const Header = () => {
@@ -19,6 +20,7 @@ const Header = () => {
   const { user } = useSelector((state) => state.authStore);
   const { search } = useSelector((state) => state.searchStore);
   const { wishlist } = useSelector((state) => state.wishlistStore);
+  const { cart } = useSelector((state) => state.cartStore);
 
   // const [search, setSearch] = useState("");
 
@@ -29,6 +31,7 @@ const Header = () => {
   useEffect(() => {
     if (user?._id) {
       dispatch(getWishlist(user._id));
+      dispatch(getCart(user._id));
     }
   }, [dispatch, user]);
 
@@ -82,8 +85,11 @@ const Header = () => {
               )}
             </Link>
 
-            <Link href="/cart" className="icon-btn">
+            <Link href="/cart" className="icon-btn cart-icon-wrapper">
               <FiShoppingCart />
+              {cart?.products?.length > 0 && (
+                <span className="cart-count">{cart.products.reduce((acc, item) => acc + item.quantity, 0)}</span>
+              )}
             </Link>
 
             {user ? (

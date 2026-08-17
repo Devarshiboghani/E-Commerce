@@ -87,6 +87,28 @@
   border: 2px solid white;
 }
 
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -1px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff2d55;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  border: 2px solid white;
+}
+
 .signin-btn {
   background: #15803d;
   color: white;

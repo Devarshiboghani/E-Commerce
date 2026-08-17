@@ -15,6 +15,7 @@ import {
   removeWishlist,
   getWishlist,
 } from "@/redux/actions/wishlistAction";
+import { addToCart } from "@/redux/actions/cartAction";
 import "./ProductCard.css";
 
 const ProductCard = ({ item }) => {
@@ -88,7 +89,11 @@ const ProductCard = ({ item }) => {
           )}
         </button>
 
-        <img src={item.images?.[0] || item.image} alt={item.title} />
+        <img 
+          src={item.images?.[0] || item.image || "https://placehold.co/600x400/f8f9fa/a0aec0?text=No+Image"} 
+          alt={item.title} 
+          onError={(e) => { e.target.src = "https://placehold.co/600x400/f8f9fa/a0aec0?text=No+Image"; }}
+        />
       </div>
 
       {/* Product Details */}
@@ -117,7 +122,17 @@ const ProductCard = ({ item }) => {
             className="product-card-btn"
             onClick={(e) => {
               e.stopPropagation();
-              alert("Add To Cart");
+              if (!user) {
+                router.push("/signin");
+                return;
+              }
+              dispatch(addToCart({ userId: user._id, productId: item._id, quantity: 1 })).then((res) => {
+                if (!res.error) {
+                  router.push("/checkout");
+                } else {
+                  alert("Failed to process Buy Now: " + res.payload);
+                }
+              });
             }}
           >
             Buy Now

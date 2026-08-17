@@ -1,34 +1,37 @@
 import connectDB from "@/lib/connectdb";
 import { NextResponse } from "next/server";
 import User from "@/lib/model/user";
-
-// export async function POST(req) {
-//   // db Connection
-//   await connectDB();
-//   let body = await req.json();
-
-//   let user = await User.create(body);
-
-//   return NextResponse.json(user, { status: 200, message: "Register Success...."});
-// }
+import bcrypt from "bcrypt";
 
 export async function POST(req) {
-  // try {
-    
+  try {
     await connectDB();
     const body = await req.json();
 
-    console.log("BODY DATA = ", body);
+    // Check if user already exists
+    const existingUser = await User.findOne({ email: body.email });
+    if (existingUser) {
+      return NextResponse.json({ message: "User already exists with this email" }, { status: 400 });
+    }
 
-    const user = await User.create(body);
-    console.log("USER SAVED= ", user);
+    // Hash the password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(body.password, salt);
+
+    // Create the user with the hashed password
+    const user = await User.create({
+      ...body,
+      password: hashedPassword,
+    });
     
-    return NextResponse.json(user);
+    // Do not return the password in the response
+    const userResponse = user.toObject();
+    delete userResponse.password;
 
-  // } catch (err) {
+    return NextResponse.json({ message: "Registration successful", user: userResponse }, { status: 201 });
 
-  //   console.log("REGISTER ERROR: ", err);
-
-  //   return NextResponse.json(user);
-  // }
+  } catch (err) {
+    console.error("REGISTER ERROR: ", err);
+    return NextResponse.json({ message: "Internal server error" }, { status: 500 });
+  }
 }
