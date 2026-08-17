@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="ZestCart Banner" width="100%" style="border-radius: 15px; margin-bottom: 20px;"/>
   
   <h1>🛒 ZestCart - Premium E-Commerce Platform</h1>
   
@@ -81,8 +80,8 @@ RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 
 # Admin Credentials (Hardcoded for testing)
-ADMIN_EMAIL=admin@admin.com
-ADMIN_PASSWORD=admin
+ADMIN_EMAIL="admin@zestcart.com"
+ADMIN_PASSWORD="adminpassword123
 ```
 
 ### 5. Run the Development Server
@@ -93,17 +92,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ---
 
-## 📸 Screenshots
-
-| Home Page | Product Details |
-| :---: | :---: |
-| *(Add your screenshot here)* | *(Add your screenshot here)* |
-
-| Shopping Cart | Razorpay Checkout |
-| :---: | :---: |
-| *(Add your screenshot here)* | *(Add your screenshot here)* |
-
----
 
 ## 📂 Folder Structure
 
