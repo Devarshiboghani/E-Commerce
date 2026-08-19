@@ -115,6 +115,7 @@ The project integrates **Razorpay** for a secure checkout process:
 
 ---
 
+```text
 zestcart/
 ├── public/                 # Static images and icons
 ├── src/
@@ -156,6 +157,7 @@ zestcart/
 ├── .env.local              # Environment Variables
 ├── package.json            # Dependencies
 └── README.md               # Project Documentation
+```
 
 ---
 
