@@ -76,7 +76,7 @@ Authentication is handled using **JWT (JSON Web Token)** combined with **bcryptj
 
 ## 🛒 Shopping Cart & Wishlist Flow
 
-```
+---
 User selects a product
    → Adds product to Cart / Wishlist
    → Views Cart Page
@@ -85,6 +85,8 @@ User selects a product
 ---
 
 ## 💳 Checkout & Razorpay Payment Flow
+
+---
 
 The project integrates **Razorpay** for a secure checkout process:
 
@@ -111,7 +113,8 @@ The project integrates **Razorpay** for a secure checkout process:
 
 ## 📁 Folder Structure
 
-```
+---
+
 zestcart/
 ├── public/                 # Static images and icons
 ├── src/
@@ -153,7 +156,6 @@ zestcart/
 ├── .env.local              # Environment Variables
 ├── package.json            # Dependencies
 └── README.md               # Project Documentation
-```
 
 ---
 
@@ -196,8 +198,6 @@ RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 | `ADMIN_PASSWORD` | Password for the Admin Dashboard |
 | `NEXT_PUBLIC_RAZORPAY_KEY_ID` | Public Razorpay Key ID used on the frontend |
 | `RAZORPAY_KEY_SECRET` | Private Razorpay secret key used only on the backend |
-
-> ⚠️ **Never commit your `.env.local` file to GitHub.** Add it to `.gitignore` and keep all secrets private.
 
 ---
 
