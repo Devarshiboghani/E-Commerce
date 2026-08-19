@@ -55,11 +55,11 @@ const Header = () => {
             <Nav.Link as={Link} href="/">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} href="/about">
-              About
-            </Nav.Link>
             <Nav.Link as={Link} href="/categories">
-              Categories
+              Category
+            </Nav.Link>
+            <Nav.Link as={Link} href="/products">
+              Product
             </Nav.Link>
             <Nav.Link as={Link} href="/contact">
               Contact
@@ -122,9 +122,11 @@ const Header = () => {
                   </>
                 )}
 
-                <NavDropdown.Item as={Link} href="/profile">
-                  My Profile
-                </NavDropdown.Item>
+                {user?.role !== "admin" && (
+                  <NavDropdown.Item as={Link} href="/profile">
+                    My Profile
+                  </NavDropdown.Item>
+                )}
 
                 <NavDropdown.Item as={Link} href="/orders">
                   Orders

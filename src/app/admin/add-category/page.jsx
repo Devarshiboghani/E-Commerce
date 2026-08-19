@@ -81,7 +81,7 @@ export default function AddCategory() {
     <div className="container mt-5 pt-5">
       <form onSubmit={handleSubmit}>
         <input
-          className="form-control mb-3"w
+          className="form-control mb-3"
           type="text"
           placeholder="Category Name"
           name="categoryName"

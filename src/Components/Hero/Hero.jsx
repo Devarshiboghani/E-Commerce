@@ -3,8 +3,10 @@
 import "./Hero.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaShieldAlt, FaTruck, FaCheckCircle } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
+  const router = useRouter();
   return (
     <section className="hero-section">
       {/* <Container fluid> */}
@@ -38,13 +40,14 @@ const HeroSection = () => {
               </p>
 
               <div className="hero-btns">
-                <Button className="shop-btn">
+                <Button className="shop-btn" onClick={() => router.push('/products')}>
                   Shop Now →
                 </Button>
 
                 <Button
                   variant="outline-success"
                   className="explore-btn"
+                  onClick={() => router.push('/categories')}
                 >
                   Explore Deals
                 </Button>
